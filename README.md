@@ -2,4 +2,4 @@
 
 ## **_JUEGO DE MEMORIA (MEMORAMA) UTILIZANDO JAVASCRIPT_**
 
-### Código de Apoyo:
+### _Código de Apoyo:_
