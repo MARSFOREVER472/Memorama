@@ -1,2 +1,2 @@
-# Memorama
+# _Memorama_
 JUEGO DE MEMORIA (MEMORAMA) EN JAVASCRIPT.
