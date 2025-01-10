@@ -1,7 +1,14 @@
+// DECLARACIÓN DE VARIABLES...
+
+let totalCards = 4;
 let icons = [];
 let select = [];
 
+// LLAMADO A LA FUNCIÓN PARA GENERAR EL TABLERO...
+
 generarTablero();
+
+// FUNCIÓN PARA CARGAR LAS IMÁGENES DE CADA FICHA...
 
 function loadIcons()
 {
@@ -21,6 +28,8 @@ function loadIcons()
     ]
 }
 
+// FUNCIÓN PARA REALIZAR UN TABLERO DEL JUEGO CON 24 FICHAS EN TOTAL...
+
 function generarTablero()
 {
     loadIcons();
@@ -28,7 +37,7 @@ function generarTablero()
     let board = document.getElementById("tablero");
     let cards = [];
 
-    for (let i = 0; i < 24; i++)
+    for (let i = 0; i < totalCards; i++)
     {
         cards.push(`
             <div class="area-tarjeta" onclick="seleccionarTarjeta(${i})">
@@ -53,6 +62,8 @@ function generarTablero()
     board.innerHTML = cards.join(" ");
 }
 
+// FUNCIÓN PARA SELECCIONAR UNA FICHA DEL TABLERO...
+
 function seleccionarTarjeta(i)
 {
     let card = document.getElementById("tarjeta" + i);
@@ -69,6 +80,8 @@ function seleccionarTarjeta(i)
         select = [];
     }
 }
+
+// FUNCIÓN PARA DEJAR DE SELECCIONAR UNA FICHA DEL TABLERO...
 
 function unselect(select)
 {
@@ -87,8 +100,33 @@ function unselect(select)
 
         else
         {
-            backward1.style.transform = "plum";
-            backward2.style.transform = "plum";
+            backward1.style.background = "plum";
+            backward2.style.background = "plum";
         }
+
+        if (verificarFin())
+        {
+            alert("EL JUEGO HA TERMINADO!");
+            
+        }
+        
     }, 1000);
+}
+
+// FUNCIÓN PARA TERMINAR UNA PARTIDA MEDIANTE UN MENSAJE DE ALERTA...
+
+function verificarFin()
+{
+    for (let i = 0; i < totalCards; i++)
+    {
+        let backward = document.getElementById("trasera" + i);
+
+
+        if (backward.style.background != "plum")
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
