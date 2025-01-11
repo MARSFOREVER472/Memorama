@@ -1,5 +1,6 @@
 // DECLARACIÓN DE VARIABLES...
 
+let points;
 let totalCards = 4;
 let icons = [];
 let select = [];
@@ -32,6 +33,7 @@ function loadIcons()
 
 function generarTablero()
 {
+    points = 0;
     loadIcons();
     select = [];
     let board = document.getElementById("tablero");
@@ -102,6 +104,8 @@ function unselect(select)
         {
             backward1.style.background = "plum";
             backward2.style.background = "plum";
+            points++;
+            document.getElementById("puntos").innerHTML = "Points: " + points;
         }
 
         if (verificarFin())

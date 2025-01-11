@@ -87,6 +87,14 @@
             border-radius: 50px;
             border: black 5px solid;
             font-size: 130%;
+            display: inline-block;
+        }
+
+        #puntos
+        {
+            display: inline-block;
+            font-size: 300%;
+            margin-left: 30px;
         }
 
         @keyframes iniciar
@@ -113,12 +121,16 @@
 
     <br>
 
-    <div class="nuevo-juego" onclick="generarTablero()">
-        NEW GAME!
-    </div>
+    <div>
 
-    <div id="puntos">
-        0
+        <div class="nuevo-juego" onclick="generarTablero()">
+            NEW GAME!
+        </div>
+    
+        <div id="puntos">
+            Points: 0
+        </div>
+
     </div>
 
     <!-- JS -->
